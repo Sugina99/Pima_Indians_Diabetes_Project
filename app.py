@@ -9,8 +9,24 @@ scale=joblib.load("scale.pkl")
  
 
 @app.route("/")
-def hello_world():
+def LandingPage():
     return render_template("index.html")
+
+# @app.route("/predict",methods=['POST','GET'])
+# def predict():
+#      Pregnancies = request.form['1']
+#      Glucose = request.form['2']
+#      BloodPressure = request.form['3']
+#      SkinThickness = request.form['4']
+#      Insulin = request.form['5']
+#      BMI = request.form['6']
+#      DPF = request.form['7']
+#      Age = request.form['8']
+#      RowDf=pd.DataFrame([pd.Series([Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DPF,Age])])
+#      RowDf_new=pd.DataFrame(scale.transform(RowDf))
+#      print(RowDf_new)
+
+#      return render_template("index.html")
 
 if __name__=="__main__":
     app.run(debug=True)
